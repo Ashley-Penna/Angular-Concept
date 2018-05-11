@@ -1,0 +1,21 @@
+<h2>Attribute Directive</h2>
+<p [ngStyle]="{color: myColor}">ngStyle 1</p>
+<p [ngStyle]="myStyle">ngStyle 2</p>
+<p [ngClass]="myClass">ngClass 1</p> <!--use as a variable whose value is "my-class"-->
+<p [ngClass]="'myClass'">ngClass 2</p> <!--use as a string -->
+<p ngClass="myClass">ngClass 3</p> <!--equivalent to Line 5-->
+<p [ngClass]="['my-class', 'another-class']">ngClass 4</p>
+<p [ngClass]="{'my-class': false, 'another-class': true}">ngClass 5</p>
+
+<h2>Structural Directive</h2>
+<!-- *ngIf, else      do some research on it-->
+<!-- *ngFor -->
+<div [ngSwitch]="mySwitch">
+  <p *ngSwitchDefault>Default</p>
+  <p *ngSwitchCase="1">1</p>
+  <p *ngSwitchCase="2">2</p>
+  <p *ngSwitchCase="3">3</p>
+</div>
+<button mat-raised-button color="primary" (click)="mySwitch = 1">1</button>
+<button mat-raised-button color="primary" (click)="mySwitch = 2">2</button>
+<button mat-raised-button color="primary" (click)="mySwitch = 3">3</button>

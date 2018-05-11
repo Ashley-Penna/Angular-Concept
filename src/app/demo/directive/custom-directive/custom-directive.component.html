@@ -1,0 +1,8 @@
+<h3>Custom Directive</h3>
+<div appMyhidden [person]="person"> <!-- attribute binding-->
+  Person: {{ person ? person.name : ''}}
+</div>
+<div *appMyif="person">
+  Person: {{ person.name }}
+</div>
+<button mat-raised-button color="default" (click)="togglePerson()">Toggle Person</button>

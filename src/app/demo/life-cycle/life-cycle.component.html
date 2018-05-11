@@ -1,0 +1,13 @@
+<h2>Angular 5 Life Cycle</h2>
+<ul>
+  <li>ngOnChanges</li>
+  <li class="text-primary">ngOnInit</li>
+  <li>ngOnCheck</li>
+  <li class="text-primary">ngAfterContentInit</li>
+  <li>ngAfterContentChecked</li>
+  <li class="text-primary">ngAfterViewInit</li>
+  <li>ngAfterViewChecked</li>
+  <li class="text-primary">ngOnDestroy</li>
+</ul>
+<app-lc-person [person]="person"></app-lc-person>
+<button mat-raised-button color="accent" (click)="changePerson()">Change Person</button>

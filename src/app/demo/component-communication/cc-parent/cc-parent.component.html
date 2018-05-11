@@ -1,0 +1,12 @@
+<div style="border: 1px solid blue;">
+  <h3>In Parent</h3>
+  <p>{{ person.name }} : {{ person.age }}</p>
+  <!-- Design Pattern: Mediator  (to pass data to siblings) -->
+  <app-cc-child [person]="person" (onAddAge)="handleAddAge($event)">
+    <!-- projection/transclusion -->
+    <p class="p1">Contents come from parent. {{ person.name }}</p>
+    <p class="p2">Contents come from parent. {{ person.name }}</p>
+    <p class="p3">Contents come from parent. {{ person.name }}</p>
+  </app-cc-child>
+  <app-cc-another-child [person]="person"></app-cc-another-child>
+</div>

@@ -1,0 +1,8 @@
+<div style="border: 1px solid red; margin: 10px;">
+  <ng-content select=".p1"></ng-content>
+  <h3>In Child</h3>
+  <p>{{ person.name }} : {{ person.age }}</p>
+  <p>Local age: {{ age }}</p>
+  <button mat-raised-button color="accent" (click)="addAge()"> Add Age</button>
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,25 @@
+<mat-card fxLayout="column">
+  <mat-card-title>Template Driven</mat-card-title>
+  <!-- f is template scope variable pointing to form instance-->
+  <form fxLayout="column" ngForm #f="ngForm">
+    <mat-form-field>
+      <input type="text" matInput name="name" placeholder="Name" ngModel #n="ngModel" required>
+      <mat-error *ngIf="n.invalid">
+        Name can't be empty!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput name="age" placeholder="Age" ngModel>
+    </mat-form-field>
+    <div ngModelGroup="fullName" fxLayout="row" fxLayout.xs ="column"  fxLayoutGap="20px" >
+      <mat-form-field fxFlex="1 1 auto">
+        <input type="text" matInput name="firstName" placeholder="First Name" ngModel>
+      </mat-form-field>
+      <mat-form-field fxFlex="1 1 auto">
+        <input type="text" matInput name="lastName" placeholder="Last Name" ngModel>
+      </mat-form-field>
+    </div>
+
+  </form>
+  <p>{{ f.value | json}}</p>
+</mat-card>

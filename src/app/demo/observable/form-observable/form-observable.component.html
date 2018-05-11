@@ -1,0 +1,6 @@
+<h3>Form Observable</h3>
+<mat-form-field>
+  <input type="number" matInput placeholder="Counter" [formControl]="counterFC">
+</mat-form-field>
+<p>{{ counter }}</p>
+<button mat-raised-button (click)="cancel()">Cancel</button>

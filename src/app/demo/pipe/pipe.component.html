@@ -1,0 +1,28 @@
+<h2>Custom Pipe</h2>
+<h3>Pure Pipe</h3>
+<p>USD Value: {{ money | currency }}</p>
+<p>CNY Value: {{ money | currencyExchange : 'CNY' | currency : 'CNY'}}</p>
+<p>JPY Value: {{ money | currencyExchange : 'JPY' | currency : 'JPY'}}</p>
+
+<!--
+  pure change: primitive value changes and object/array reference changes
+  impure change: pure changes + changes in object properties or array elements
+  pure pipe cannot detect impure change
+-->
+<h3>Impure Pipe</h3>
+<ul>
+  <li *ngFor="let m of moneyList | moneyFilter">
+    {{ m }}
+  </li>
+</ul>
+
+<div>
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="newMoney">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addMoney()">Add Money</button>
+</div>
+
+<h3>Async Pipe(Impure)</h3>
+<p>{{ asyncMoney}}</p>
+<p>{{ fetchMoney | async }}</p>  <!--line 28 is equivalent to line 27-->
